@@ -6,7 +6,7 @@ class Solution:
         for i in range(len(nums)):
             diff = target - nums[i]
             
-            if diff not in d:
+            if d.get(diff) is None:
                 d[nums[i]] = i
             else:
                 op = [d[diff], i ]
