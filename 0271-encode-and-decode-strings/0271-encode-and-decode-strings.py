@@ -20,7 +20,11 @@ class Codec:
         i= 0
         
         while i < len(s):
-            key_index = s.index(key, i)
+            
+            key_index = i
+            while s[key_index] != key:
+                key_index += 1
+            
             word_length = int(s[i:key_index])
             
             op.append(s[key_index+1 : key_index+1 + word_length])
