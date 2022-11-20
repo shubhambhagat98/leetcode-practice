@@ -27,7 +27,7 @@ class Solution:
                     matrix[r][c] = 0
         
         if matrix[0][0] == 0:
-            for r in range(1, ROWS):
+            for r in range(ROWS):
                 matrix[r][0] = 0
         
         if rowZeroFlag == True:
