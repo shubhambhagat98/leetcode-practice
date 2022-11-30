@@ -5,7 +5,7 @@ class Solution:
         
         final_count = 0
         
-        for x in s:
+        for x in s: # iterating over set to avoid duplicate element check
             temp = 0
             if x-1 in s:
                 continue
