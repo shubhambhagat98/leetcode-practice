@@ -23,15 +23,9 @@ class Solution:
         if count == 1:
             s+= chars[curr-1]
         else:
-            s+= chars[curr-1] + str(count)
-        
-        print(s)
-        
+            s+= chars[curr-1] + str(count)     
         for i in range(len(s)):
-            print(s[i])
             chars[i] = s[i]
-        
-        
-        
+            
         return len(s) 
         
