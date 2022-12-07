@@ -20,14 +20,14 @@ class Solution:
                 
                 temp = int(c)*temp
                 stack.append(temp)
-                print(temp)
+                # print(temp)
             
             elif c.isdigit():
                 temp_num += c
             else:
                 stack.append(c)
         
-        print("".join(stack))
+        # print("".join(stack))
             
         
         return "".join(stack)
