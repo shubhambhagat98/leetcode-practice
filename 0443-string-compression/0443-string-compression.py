@@ -13,10 +13,9 @@ class Solution:
             if chars[curr-1] == chars[curr]:
                 count += 1
             else:
-                if count == 1:
-                    s+= chars[curr-1]
-                else:
-                    s+= chars[curr-1] + str(count)
+                s+= chars[curr-1]  
+                if count > 1:
+                    s+= str(count)
                     count = 1
             curr += 1
                 
