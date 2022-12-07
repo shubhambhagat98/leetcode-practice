@@ -8,8 +8,5 @@ class Solution:
             rem = num%10
             num = num//10 
             rev_num = rev_num*(10) + rem
-            print(rev_num)
-
-
         return x==rev_num
             
