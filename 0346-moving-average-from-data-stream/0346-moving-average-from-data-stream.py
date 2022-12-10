@@ -10,12 +10,12 @@ class MovingAverage:
     def updateSum(self, val: int, prev:int):
         self.sum -= prev
         self.sum += val
-        print(f"sum ==> {self.sum}")
+        # print(f"sum ==> {self.sum}")
         
     
     def getAverage(self):
-        print(f"length==> {self.length}")
-        print(f"avg==> {self.sum/self.length}\n")
+        # print(f"length==> {self.length}")
+        # print(f"avg==> {self.sum/self.length}\n")
         return self.sum/self.length
 
     def next(self, val: int) -> float:
