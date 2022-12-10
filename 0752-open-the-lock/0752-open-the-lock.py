@@ -15,7 +15,7 @@ class Solution:
         succ_list = []
         
         for i in range(4):
-            temp_succ1  = current[0:i] + str((int(current[i]) + 9) %10) + current[i+1:]
+            temp_succ1  = current[0:i] + str((int(current[i]) -1) %10) + current[i+1:]
             # print(f"t1 : {temp_succ1}", end=" ")
             temp_succ2 = current[0:i] + str((int(current[i] ) + 1) %10) + current[i+1:]
             # print(f"t2 : {temp_succ2}", end= " ")
