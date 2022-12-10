@@ -1,7 +1,5 @@
 class Solution:
 
-    
-    
     def __init__(self):
         self.visited = set()
         self.count = 0
