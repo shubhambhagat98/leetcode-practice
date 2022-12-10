@@ -24,11 +24,11 @@ class Solution:
         # visited = set(((start_row, start_col), 0))
         
         while queue:
-            current, dist = queue.pop(0)
-            for succ in self.successors(*current, rooms):
-                queue.append((succ, dist + 1))
+            row, col = queue.pop(0)
+            for succ in self.successors(row, col, rooms):
+                queue.append(succ)
                 # if rooms[succ[0]][succ[1]] > dist + 1:
-                rooms[succ[0]][succ[1]] = dist + 1
+                rooms[succ[0]][succ[1]] = rooms[row][col] + 1
                 # visited.add(succ)
                     
             
@@ -44,7 +44,7 @@ class Solution:
         for row in range(len(rooms)):
             for col in range(len(rooms[0])):
                 if rooms[row][col] == 0:
-                    gates.append(((row,col), 0))
+                    gates.append((row,col))
         
         self.bfs(gates, rooms)
                     
