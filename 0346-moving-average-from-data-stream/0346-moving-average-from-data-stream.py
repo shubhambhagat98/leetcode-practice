@@ -21,10 +21,13 @@ class MovingAverage:
     def next(self, val: int) -> float:
         
         #check if tail is at last index
-        if self.tail == self.size -1:
-            self.tail = 0
-        else:
-            self.tail += 1
+        # if self.tail == self.size -1:
+        #     self.tail = 0
+        # else:
+        #     self.tail += 1
+        
+        
+        self.tail = (self.tail + 1) % self.size
         
         prev = self.cq[self.tail]
         self.cq[self.tail] = val
