@@ -43,7 +43,7 @@ class Solution:
         
         while queue:
             
-            print(f"\n\ncurrent : {queue[0]}")
+            # print(f"\n\ncurrent : {queue[0]}")
             
             curr, t_count = queue.pop(0)
             
