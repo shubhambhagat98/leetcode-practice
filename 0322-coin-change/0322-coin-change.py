@@ -1,3 +1,5 @@
+import heapq
+
 class Solution:
     def coinChange(self, coins: List[int], amount: int) -> int:
         
@@ -5,10 +7,12 @@ class Solution:
         if amount <= 0:
             return 0
         
+        coins = sorted(coins)
+        print(coins)
         
         #set of coins
         coin_dict = dict.fromkeys(coins, 1)
-        
+        print(coin_dict)
         count = 0
         
         queue = [amount]
@@ -26,7 +30,9 @@ class Solution:
                     return count
                 
                 for coin in coin_dict:
-                    if remainder > coin:
+                    if remainder < coin:
+                        break
+                    else:
                         if remainder-coin not in visited:
                             queue.append(remainder-coin)
                             visited.add(remainder-coin)
