@@ -1,3 +1,5 @@
+
+
 class Solution:
     def numSquares(self, n: int) -> int:
         
@@ -5,12 +7,12 @@ class Solution:
             return n
         
         # list of perfect squares less than equal to n
-        squares = []
-        squares_set = set()
+        # squares = []
+        squares = dict()
         i = 1
         while (i*i) <= n:
-            squares.append(i*i)
-            squares_set.add(i*i)
+            # squares.append(i*i)
+            squares[i*i] = None
             i+= 1
         
         count = 0
@@ -22,7 +24,7 @@ class Solution:
             for i in range(len(queue)):
                 remainder = queue.pop(0)    
                 # print(f"remainder : {remainder}, path: {path}")
-                if remainder in squares_set:
+                if remainder in squares:
                         # print(f"remainder ==> {remainder} path==> {path}")
                     return count
                 
