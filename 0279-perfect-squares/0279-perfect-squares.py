@@ -12,24 +12,24 @@ class Solution:
             i+= 1
         
         count = 0
-        queue = [(n, "")]
+        queue = [n]
         visited = {n}
         while queue:
             count += 1 
             
             for i in range(len(queue)):
-                remainder, path = queue.pop(0)    
+                remainder = queue.pop(0)    
                 # print(f"remainder : {remainder}, path: {path}")
                 
                 for sqr in squares:
                     if remainder == sqr:
-                        print(f"remainder ==> {remainder} path==> {path}")
+                        # print(f"remainder ==> {remainder} path==> {path}")
                         return count
                     if remainder < sqr:
                         break
                     else:
                         if (remainder - sqr) not in visited:
-                            queue.append((remainder-sqr, path + str(sqr) + ","))
+                            queue.append(remainder-sqr)
                             visited.add(remainder-sqr)
             # print(f"queue: {queue}\n")
         return count
