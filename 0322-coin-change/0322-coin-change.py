@@ -8,11 +8,11 @@ class Solution:
             return 0
         
         coins = sorted(coins)
-        print(coins)
+        # print(coins)
         
         #set of coins
         coin_dict = dict.fromkeys(coins, 1)
-        print(coin_dict)
+        # print(coin_dict)
         count = 0
         
         queue = [amount]
