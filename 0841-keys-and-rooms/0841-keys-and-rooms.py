@@ -17,6 +17,6 @@ class Solution:
                     visited.add(lock)
                     queue.append(lock)
         
-        print(visited)
+        # print(visited)
         
         return len(visited) == len(rooms)
