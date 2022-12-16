@@ -1,7 +1,7 @@
 class Solution:
     
     
-    def climb_stairs_rec(self, current, n, level, memo):
+    def climb_stairs_rec(self, current, n,memo):
         
         if current > n:
             return 0
@@ -10,13 +10,13 @@ class Solution:
             return 1
         
         
-        if (level,current) in memo:
-            return memo[(level,current)]
+        if current in memo:
+            return memo[current]
         
         
-        memo[(level,current)] = self.climb_stairs_rec(current+1, n, level+1, memo) + self.climb_stairs_rec(current+2,n, level+1, memo)
+        memo[current] = self.climb_stairs_rec(current+1, n, memo) + self.climb_stairs_rec(current+2,n,memo)
         
-        return memo[(level,current)]
+        return memo[current]
         
         
     
@@ -24,4 +24,4 @@ class Solution:
     def climbStairs(self, n: int) -> int:
         
         memo = {}
-        return self.climb_stairs_rec(0, n, 0, memo)
+        return self.climb_stairs_rec(0, n, memo)
