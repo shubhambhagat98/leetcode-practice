@@ -1,17 +1,13 @@
 class Solution:
     
-    def recReverse(self, s, index,):
+    def recReverse(self, s, low, high ):
         
-        if index >= len(s):
+        if low > high:
             return
         
-        current_char = s[index]
-        dest_index = (index+1) * -1
+        s[low], s[high] = s[high], s[low]
         
-        self.recReverse(s, index+1)
-        
-        s[dest_index] = current_char
-        
+        self.recReverse(s, low+1, high-1)
         
     
     def reverseString(self, s: List[str]) -> None:
@@ -19,4 +15,4 @@ class Solution:
         Do not return anything, modify s in-place instead.
         """
         
-        self.recReverse(s, 0)
+        self.recReverse(s, 0, len(s)-1)
