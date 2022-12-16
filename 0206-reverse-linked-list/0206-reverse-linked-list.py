@@ -6,12 +6,24 @@
 class Solution:
     def reverseList(self, head: Optional[ListNode]) -> Optional[ListNode]:
         
-        if not head or not head.next:
+#         if not head or not head.next:
+#             return head
+        
+#         parent = self.reverseList(head.next)
+        
+#         head.next.next = head
+#         head.next = None
+        
+#         return parent
+
+        if not head:
             return head
         
-        parent = self.reverseList(head.next)
+        prev = None
+        while head:
+            next_node = head.next
+            head.next = prev
+            prev = head
+            head=next_node
         
-        head.next.next = head
-        head.next = None
-        
-        return parent
+        return prev
